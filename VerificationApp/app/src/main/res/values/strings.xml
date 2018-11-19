@@ -2,13 +2,18 @@
     <string name="app_name">VerificationApp</string>
     <string name="name">Name</string>
     <string name="age">Age</string>
-    <string name="sex">VerificationApp</string>
-    <string name="gpa">VerificationApp</string>
-    <string name="major">VerificationApp</string>
-    <string name="universityName">VerificationApp</string>
-    <string name="nationalID">VerificationApp</string>
-    <string name="dateOfBirth">VerificationApp</string>
-    <string name="placeOfBirth">VerificationApp</string>
+    <string name="sex">Sex</string>
+    <string name="gpa">GPA</string>
+    <string name="major">Major</string>
+    <string name="universityName">University Name</string>
+    <string name="nationalID">National ID</string>
+    <string name="dateOfBirth">Date of Birth</string>
+    <string name="placeOfBirth">Place of Birth</string>
+    <string name="scan">Scanning</string>
+    <string name="invalidQR">Invalid QR</string>
+    <string name="pleaseWait">Please wait</string>
+    <string name="gettingData">Getting data</string>
+    <string name="lang">عربي</string>
 
 
 </resources>

@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="name">الاسم</string>
+    <string name="age">العمر</string>
+    <string name="sex">الجنس</string>
+    <string name="gpa">المعدل التراكمي</string>
+    <string name="major">التخصص</string>
+    <string name="universityName">اسم الجامعه</string>
+    <string name="nationalID">الرقم الوطني</string>
+    <string name="dateOfBirth">تاريخ الميلاد</string>
+    <string name="placeOfBirth">مكان الولاده</string>
+    <string name="scan">تفحص</string>
+    <string name="invalidQR">غير صحيح QR</string>
+    <string name="pleaseWait">الرجاء الانتظار</string>
+    <string name="gettingData">الحصول على البيانات</string>
+    <string name="lang">English</string>
+
+
 
 </resources>

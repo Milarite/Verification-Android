@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<RelativeLayout
+android:layout_width="match_parent"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:configChanges="orientation|screenSize"
     android:background="@color/blackColor"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/blackColor"
         android:orientation="vertical"
+        android:gravity="center"
         tools:context=".MainActivity">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,8 +30,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
-                android:textColor="@color/colorAccent" />
+                android:textStyle="bold"
+                android:text="@string/name"
+                android:textColor="@color/orangeColor" />
 
             <TextView
                 android:id="@+id/name"
@@ -33,14 +40,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="Name"
-                android:textColor="@color/whiteColor" />
+                android:textColor="@color/greenColor" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorAccent" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,8 +55,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Age"
-                android:textColor="@color/colorAccent" />
+                android:text="@string/age"
+                android:textStyle="bold"
+                android:textColor="@color/orangeColor" />
 
             <TextView
                 android:id="@+id/age"
@@ -61,14 +65,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="Age"
-                android:textColor="@color/whiteColor" />
+                android:textColor="@color/greenColor" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorAccent" />
 
 
         <LinearLayout
@@ -81,8 +80,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sex"
-                android:textColor="@color/colorAccent" />
+                android:text="@string/sex"
+                android:textStyle="bold"
+                android:textColor="@color/orangeColor" />
 
             <TextView
                 android:id="@+id/sex"
@@ -90,14 +90,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="sex"
-                android:textColor="@color/whiteColor" />
+                android:textColor="@color/greenColor" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorAccent" />
 
 
         <LinearLayout
@@ -110,8 +105,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="GPA"
-                android:textColor="@color/colorAccent" />
+                android:text="@string/gpa"
+                android:textStyle="bold"
+                android:textColor="@color/orangeColor" />
 
             <TextView
                 android:id="@+id/gpa"
@@ -119,14 +115,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="GPA"
-                android:textColor="@color/whiteColor" />
+                android:textColor="@color/greenColor" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorAccent" />
+
 
 
         <LinearLayout
@@ -139,8 +131,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Major"
-                android:textColor="@color/colorAccent" />
+                android:text="@string/major"
+                android:textStyle="bold"
+                android:textColor="@color/orangeColor" />
 
             <TextView
                 android:id="@+id/major"
@@ -148,14 +141,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="Major"
-                android:textColor="@color/whiteColor" />
+                android:textColor="@color/greenColor" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorAccent" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -167,8 +156,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="University Name"
-                android:textColor="@color/colorAccent" />
+                android:textStyle="bold"
+                android:text="@string/universityName"
+                android:textColor="@color/orangeColor" />
 
             <TextView
                 android:id="@+id/universityName"
@@ -176,14 +166,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="University Name"
-                android:textColor="@color/whiteColor" />
+                android:textColor="@color/greenColor" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorAccent" />
+
 
 
         <LinearLayout
@@ -196,8 +182,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="National ID"
-                android:textColor="@color/colorAccent" />
+                android:text="@string/nationalID"
+                android:textStyle="bold"
+                android:textColor="@color/orangeColor" />
 
             <TextView
                 android:id="@+id/nationalID"
@@ -205,14 +192,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="National ID"
-                android:textColor="@color/whiteColor" />
+                android:textColor="@color/greenColor" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorAccent" />
 
 
         <LinearLayout
@@ -225,8 +207,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date of Birth"
-                android:textColor="@color/colorAccent" />
+                android:text="@string/dateOfBirth"
+                android:textColor="@color/orangeColor"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/dateOfBirth"
@@ -234,14 +217,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="Birth of Date"
-                android:textColor="@color/whiteColor" />
+                android:textColor="@color/greenColor" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorAccent" />
+
 
 
         <LinearLayout
@@ -254,8 +233,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Place of birth"
-                android:textColor="@color/colorAccent" />
+                android:text="@string/placeOfBirth"
+                android:textStyle="bold"
+                android:textColor="@color/orangeColor" />
 
             <TextView
                 android:id="@+id/placeOfBirth"
@@ -263,24 +243,40 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="Place of birth"
-                android:textColor="@color/whiteColor" />
+                android:textColor="@color/greenColor" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorAccent" />
+
 
 
     </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:textColor="@color/whiteColor"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:id="@+id/switchLang"
+        android:textSize="18dp"
+
+        android:text="@string/lang"/>
+
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="5dp"
         android:src="@drawable/scann"
+        android:tint="@color/colorAccent"
+        android:backgroundTint="@color/whiteColor"
+        android:background="@color/whiteColor"
         android:id="@+id/scan"
         android:layout_alignParentRight="true" />
+
 
 </RelativeLayout>
