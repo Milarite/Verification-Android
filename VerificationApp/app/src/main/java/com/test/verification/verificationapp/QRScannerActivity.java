@@ -79,6 +79,7 @@ public class QRScannerActivity extends AppCompatActivity {
 
                 MainActivity.age.setText(HelperClass.verification_sol_verification.getAge(qrResultHash).send());
                 MainActivity.name.setText(HelperClass.verification_sol_verification.getFirstName(qrResultHash).send() +" "+HelperClass.verification_sol_verification.getLastName(qrResultHash).send());
+                MainActivity.studentID.setText(HelperClass.verification_sol_verification.getStudentId(qrResultHash).send());
                 MainActivity.sex.setText(HelperClass.verification_sol_verification.getSex(qrResultHash).send());
                 MainActivity.major.setText(HelperClass.verification_sol_verification.getMajor(qrResultHash).send());
                 MainActivity.gpa.setText(HelperClass.verification_sol_verification.getGPA(qrResultHash).send());

@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">VerificationApp</string>
     <string name="name">Name</string>
+    <string name="studentID">Student ID</string>
+
     <string name="age">Age</string>
+
     <string name="sex">Sex</string>
     <string name="gpa">GPA</string>
     <string name="major">Major</string>

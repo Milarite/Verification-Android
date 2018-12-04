@@ -34,11 +34,9 @@ import org.web3j.tx.ManagedTransaction;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static TextView name,age,sex,major,gpa,universityName,nationalID,dateOfBirth,placeOfBirth,switchLang;
+    public static TextView name,age,sex,major,gpa,universityName,nationalID,dateOfBirth,placeOfBirth,switchLang,studentID;
     FloatingActionButton scan;
     HelperClass helperClass;
-    Bundle extras;
-    Intent getIntent;
     @RequiresApi(api = Build.VERSION_CODES.O_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         helperClass=new HelperClass(MainActivity.this);
         switchLang=(TextView)findViewById(R.id.switchLang);
+        studentID=(TextView)findViewById(R.id.studentID);
         name=(TextView)findViewById(R.id.name);
         age=(TextView)findViewById(R.id.age);
         sex=(TextView)findViewById(R.id.sex);
@@ -60,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         if (switchLang.getText().toString().equals("English"))
         {
             name.setGravity(Gravity.LEFT);
+            studentID.setGravity(Gravity.LEFT);
             age.setGravity(Gravity.LEFT);
             sex.setGravity(Gravity.LEFT);
             major.setGravity(Gravity.LEFT);
@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 name.setText("");
+                studentID.setText("");
                 age.setText("");
                 sex.setText("");
                 major.setText("");
@@ -106,6 +107,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putString("name",name.getText().toString());
+        outState.putString("studentID",studentID.getText().toString());
+
         outState.putString("age",age.getText().toString());
         outState.putString("sex",sex.getText().toString());
         outState.putString("major",major.getText().toString());
@@ -122,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         name.setText(savedInstanceState.getString("name"));
+        studentID.setText(savedInstanceState.getString("studentID"));
         age.setText(savedInstanceState.getString("age"));
         sex.setText(savedInstanceState.getString("sex"));
         major.setText(savedInstanceState.getString("major"));

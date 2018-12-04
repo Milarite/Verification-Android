@@ -2,6 +2,7 @@
 <resources>
 
     <string name="name">الاسم</string>
+    <string name="studentID">رقم الطالب</string>
     <string name="age">العمر</string>
     <string name="sex">الجنس</string>
     <string name="gpa">المعدل التراكمي</string>
