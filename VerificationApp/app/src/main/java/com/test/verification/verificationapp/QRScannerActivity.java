@@ -16,12 +16,12 @@ import org.web3j.tx.Contract;
 import org.web3j.tx.ManagedTransaction;
 
 public class QRScannerActivity extends AppCompatActivity {
-    String qrResultHash;
+    String qrResultHash,name,age,sex,major,gpa,universityName,nationalID,dateOfBirth,placeOfBirth,switchLang,studentID;
     ProgressDialog progressDialog;
     HelperClass helperClass;
     Intent intentSentParameters;
     IntentIntegrator integrator;
-
+    CallBack callBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,16 +77,16 @@ public class QRScannerActivity extends AppCompatActivity {
         protected String doInBackground(String... strings) {
             try {
 
-                MainActivity.age.setText(HelperClass.verification_sol_verification.getAge(qrResultHash).send());
-                MainActivity.name.setText(HelperClass.verification_sol_verification.getFirstName(qrResultHash).send() +" "+HelperClass.verification_sol_verification.getLastName(qrResultHash).send());
-                MainActivity.studentID.setText(HelperClass.verification_sol_verification.getStudentId(qrResultHash).send());
-                MainActivity.sex.setText(HelperClass.verification_sol_verification.getSex(qrResultHash).send());
-                MainActivity.major.setText(HelperClass.verification_sol_verification.getMajor(qrResultHash).send());
-                MainActivity.gpa.setText(HelperClass.verification_sol_verification.getGPA(qrResultHash).send());
-                MainActivity.universityName.setText(HelperClass.verification_sol_verification.getUniversityName(qrResultHash).send());
-                MainActivity.nationalID.setText(HelperClass.verification_sol_verification.getNationalID(qrResultHash).send());
-                MainActivity.dateOfBirth.setText(HelperClass.verification_sol_verification.getDateOfBirth(qrResultHash).send());
-                MainActivity. placeOfBirth.setText(HelperClass.verification_sol_verification.getPlaceOfBirth(qrResultHash).send());
+                age=HelperClass.verification_sol_verification.getAge(qrResultHash).send();
+                name=HelperClass.verification_sol_verification.getFirstName(qrResultHash).send() +" "+HelperClass.verification_sol_verification.getLastName(qrResultHash).send();
+                studentID=HelperClass.verification_sol_verification.getStudentId(qrResultHash).send();
+                sex=HelperClass.verification_sol_verification.getSex(qrResultHash).send();
+                major=HelperClass.verification_sol_verification.getMajor(qrResultHash).send();
+                gpa=HelperClass.verification_sol_verification.getGPA(qrResultHash).send();
+                universityName=HelperClass.verification_sol_verification.getUniversityName(qrResultHash).send();
+                nationalID=HelperClass.verification_sol_verification.getNationalID(qrResultHash).send();
+                dateOfBirth=HelperClass.verification_sol_verification.getDateOfBirth(qrResultHash).send();
+                placeOfBirth=HelperClass.verification_sol_verification.getPlaceOfBirth(qrResultHash).send();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -98,6 +98,8 @@ public class QRScannerActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+
+            callBack.sendParams(age,name,studentID,sex,major,gpa,universityName,nationalID,dateOfBirth,placeOfBirth);
             if(progressDialog !=null && progressDialog.isShowing())
                 progressDialog.dismiss();
             finish();
@@ -108,5 +110,9 @@ public class QRScannerActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
 
+    }
+    interface CallBack
+    {
+        public void sendParams(String age,String name,String studentID,String sex,String major,String gpa,String universityName,String nationalID,String dateOfBirth,String placeOfBirth);
     }
 }

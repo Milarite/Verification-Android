@@ -1,6 +1,7 @@
 package com.test.verification.verificationapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.res.Configuration;
 
@@ -21,7 +22,6 @@ public class HelperClass {
             ,verificationAddress="0xb603f9e99d0add6110dd601725a1791d19334752";
     public static Credentials credentials = Credentials.create(privateKey);
     public static Verification_sol_Verification verification_sol_verification=null;
-
 
     public HelperClass(Activity act)
     {

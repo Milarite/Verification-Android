@@ -29,12 +29,13 @@ import com.journeyapps.barcodescanner.BarcodeResult;
 import com.journeyapps.barcodescanner.camera.CameraSettings;
 import com.kenai.jffi.Main;
 
+import org.w3c.dom.Text;
 import org.web3j.tx.Contract;
 import org.web3j.tx.ManagedTransaction;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements QRScannerActivity.CallBack {
 
-    public static TextView name,age,sex,major,gpa,universityName,nationalID,dateOfBirth,placeOfBirth,switchLang,studentID;
+    TextView name,age,sex,major,gpa,universityName,nationalID,dateOfBirth,placeOfBirth,switchLang,studentID;
     FloatingActionButton scan;
     HelperClass helperClass;
     @RequiresApi(api = Build.VERSION_CODES.O_MR1)
@@ -58,30 +59,14 @@ public class MainActivity extends AppCompatActivity {
 
         if (switchLang.getText().toString().equals("English"))
         {
-            name.setGravity(Gravity.LEFT);
-            studentID.setGravity(Gravity.LEFT);
-            age.setGravity(Gravity.LEFT);
-            sex.setGravity(Gravity.LEFT);
-            major.setGravity(Gravity.LEFT);
-            gpa.setGravity(Gravity.LEFT);
-            universityName.setGravity(Gravity.LEFT);
-            nationalID.setGravity(Gravity.LEFT);
-            dateOfBirth.setGravity(Gravity.LEFT);
-            placeOfBirth.setGravity(Gravity.LEFT);
+            leftGravityTextView(name,studentID,age,sex,major,gpa,universityName,nationalID,dateOfBirth,placeOfBirth);
+
         }
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                name.setText("");
-                studentID.setText("");
-                age.setText("");
-                sex.setText("");
-                major.setText("");
-                gpa.setText("");
-                universityName.setText("");
-                nationalID.setText("");
-                dateOfBirth.setText("");
-                placeOfBirth.setText("");
+                clearTextView(name,studentID,age,sex,major,gpa,universityName,nationalID,dateOfBirth,placeOfBirth);
+
                 startActivity(new Intent(MainActivity.this,QRScannerActivity.class));
 
             }
@@ -108,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         outState.putString("name",name.getText().toString());
         outState.putString("studentID",studentID.getText().toString());
-
         outState.putString("age",age.getText().toString());
         outState.putString("sex",sex.getText().toString());
         outState.putString("major",major.getText().toString());
@@ -137,5 +121,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void sendParams(String _age, String _name, String _studentID, String _sex, String _major, String _gpa, String _universityName, String _nationalID, String _dateOfBirth, String _placeOfBirth) {
+        age.setText(_age);
+        name.setText(_name);
+        studentID.setText(_studentID);
+        sex.setText(_sex);
+        major.setText(_major);
+        gpa.setText(_gpa);
+        universityName.setText(_universityName);
+        nationalID.setText(_nationalID);
+        dateOfBirth.setText(_dateOfBirth);
+        placeOfBirth.setText(_placeOfBirth);
+    }
+    public void leftGravityTextView(TextView ... text)
+    {
+        for(int i=0;i<text.length;i++)
+        {
+            text[i].setGravity(Gravity.LEFT);
+        }
+    }
+    public void clearTextView(TextView ... textViews)
+    {
+        for (int i=0;i<textViews.length;i++)
+            textViews[i].setText("");
 
+    }
 }
