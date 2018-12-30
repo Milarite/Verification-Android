@@ -19,6 +19,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,8 +34,8 @@ import org.w3c.dom.Text;
 import org.web3j.tx.Contract;
 import org.web3j.tx.ManagedTransaction;
 
-public class MainActivity extends AppCompatActivity implements QRScannerActivity.CallBack {
-
+public class MainActivity extends AppCompatActivity  {
+    public static final int REQUEST_CODE = 1;
     TextView name,age,sex,major,gpa,universityName,nationalID,dateOfBirth,placeOfBirth,switchLang,studentID;
     FloatingActionButton scan;
     HelperClass helperClass;
@@ -66,9 +67,8 @@ public class MainActivity extends AppCompatActivity implements QRScannerActivity
             @Override
             public void onClick(View v) {
                 clearTextView(name,studentID,age,sex,major,gpa,universityName,nationalID,dateOfBirth,placeOfBirth);
-
-                startActivity(new Intent(MainActivity.this,QRScannerActivity.class));
-
+                Intent intent=new Intent(MainActivity.this,QRScannerActivity.class);
+                startActivityForResult(intent,1);
             }
         });
         switchLang.setOnClickListener(new View.OnClickListener() {
@@ -121,19 +121,19 @@ public class MainActivity extends AppCompatActivity implements QRScannerActivity
     }
 
 
-    @Override
-    public void sendParams(String _age, String _name, String _studentID, String _sex, String _major, String _gpa, String _universityName, String _nationalID, String _dateOfBirth, String _placeOfBirth) {
-        age.setText(_age);
-        name.setText(_name);
-        studentID.setText(_studentID);
-        sex.setText(_sex);
-        major.setText(_major);
-        gpa.setText(_gpa);
-        universityName.setText(_universityName);
-        nationalID.setText(_nationalID);
-        dateOfBirth.setText(_dateOfBirth);
-        placeOfBirth.setText(_placeOfBirth);
-    }
+//    @Override
+//    public void sendParams(String _age, String _name, String _studentID, String _sex, String _major, String _gpa, String _universityName, String _nationalID, String _dateOfBirth, String _placeOfBirth) {
+//        age.setText(_age);
+//        name.setText(_name);
+//        studentID.setText(_studentID);
+//        sex.setText(_sex);
+//        major.setText(_major);
+//        gpa.setText(_gpa);
+//        universityName.setText(_universityName);
+//        nationalID.setText(_nationalID);
+//        dateOfBirth.setText(_dateOfBirth);
+//        placeOfBirth.setText(_placeOfBirth);
+//    }
     public void leftGravityTextView(TextView ... text)
     {
         for(int i=0;i<text.length;i++)
@@ -145,6 +145,28 @@ public class MainActivity extends AppCompatActivity implements QRScannerActivity
     {
         for (int i=0;i<textViews.length;i++)
             textViews[i].setText("");
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        try {
+            super.onActivityResult(requestCode, resultCode, data);
+
+
+                age.setText(data.getStringExtra("age"));
+        name.setText(data.getStringExtra("name"));
+        studentID.setText(data.getStringExtra("studentID"));
+        sex.setText(data.getStringExtra("sex"));
+        major.setText(data.getStringExtra("major"));
+        gpa.setText(data.getStringExtra("gpa"));
+        universityName.setText(data.getStringExtra("universityName"));
+        nationalID.setText(data.getStringExtra("nationalID"));
+        dateOfBirth.setText(data.getStringExtra("dateOfBirth"));
+        placeOfBirth.setText(data.getStringExtra("placeOfBirth"));
+
+        } catch (Exception ex) {
+        }
+
 
     }
 }

@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -21,7 +22,8 @@ public class QRScannerActivity extends AppCompatActivity {
     HelperClass helperClass;
     Intent intentSentParameters;
     IntentIntegrator integrator;
-    CallBack callBack;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,10 +101,29 @@ public class QRScannerActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
 
-            callBack.sendParams(age,name,studentID,sex,major,gpa,universityName,nationalID,dateOfBirth,placeOfBirth);
+            Intent i=getIntent();
+            i.putExtra("age", age);
+            i.putExtra("name", name);
+            i.putExtra("studentID", studentID);
+            i.putExtra("sex", sex);
+            i.putExtra("major", major);
+            i.putExtra("gpa", gpa);
+            i.putExtra("universityName", universityName);
+            i.putExtra("nationalID", nationalID);
+            i.putExtra("dateOfBirth", dateOfBirth);
+            i.putExtra("placeOfBirth", placeOfBirth);
+            setResult(1,i);
+
             if(progressDialog !=null && progressDialog.isShowing())
                 progressDialog.dismiss();
             finish();
+
+          //  callBack.sendParams(age,name,studentID,sex,major,gpa,universityName,nationalID,dateOfBirth,placeOfBirth);
+
+
+          //  Toast.makeText(QRScannerActivity.this, age, Toast.LENGTH_SHORT).show();
+          //  finish();
+
         }
     }
 
@@ -111,8 +132,8 @@ public class QRScannerActivity extends AppCompatActivity {
         super.onBackPressed();
 
     }
-    interface CallBack
-    {
-        public void sendParams(String age,String name,String studentID,String sex,String major,String gpa,String universityName,String nationalID,String dateOfBirth,String placeOfBirth);
-    }
+//    interface CallBack
+//    {
+//        public void sendParams(String age,String name,String studentID,String sex,String major,String gpa,String universityName,String nationalID,String dateOfBirth,String placeOfBirth);
+//    }
 }

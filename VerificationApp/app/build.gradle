@@ -27,6 +27,7 @@ dependencies {
     implementation 'com.journeyapps:zxing-android-embedded:3.5.0@aar'
     implementation 'com.android.support:design:27.1.0'
     implementation 'org.web3j:core:3.3.1-android'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.google.zxing:core:3.2.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
